@@ -28,16 +28,17 @@ public class ListItemsAdapter extends RecyclerView.Adapter<ListItemsAdapter.View
     private Context context;
 
     Activity activity;
-    ArrayList advert_id, advert_name, advert_phone, advert_description, advert_date, advert_location, advert_type;
+    ArrayList advert_id, advert_name, advert_phone, advert_description, advert_date, advert_latitude, advert_longitude, advert_type;
 
-    public ListItemsAdapter(@NonNull Context context, ArrayList advert_id, ArrayList advert_name, ArrayList advert_phone, ArrayList advert_description, ArrayList advert_date, ArrayList advert_location, ArrayList advert_type) {
+    public ListItemsAdapter(@NonNull Context context, ArrayList advert_id, ArrayList advert_name, ArrayList advert_phone, ArrayList advert_description, ArrayList advert_date, ArrayList advert_latitude, ArrayList advert_longitude, ArrayList advert_type) {
         this.context = context;
         this.advert_id = advert_id;
         this.advert_name = advert_name;
         this.advert_phone = advert_phone;
         this.advert_description = advert_description;
         this.advert_date = advert_date;
-        this.advert_location = advert_location;
+        this.advert_latitude = advert_latitude;
+        this.advert_longitude = advert_longitude;
         this.advert_type = advert_type;
     }
 
@@ -62,7 +63,8 @@ public class ListItemsAdapter extends RecyclerView.Adapter<ListItemsAdapter.View
                 intent.putExtra("phone", String.valueOf(advert_phone.get(currentPosition)));
                 intent.putExtra("description", String.valueOf(advert_description.get(currentPosition)));
                 intent.putExtra("date", String.valueOf(advert_date.get(currentPosition)));
-                intent.putExtra("location", String.valueOf(advert_location.get(currentPosition)));
+                intent.putExtra("latitude", String.valueOf(advert_latitude.get(currentPosition)));
+                intent.putExtra("longitude", String.valueOf(advert_longitude.get(currentPosition)));
                 intent.putExtra("type", String.valueOf(advert_type.get(currentPosition)));
 
                 context.startActivity(intent);

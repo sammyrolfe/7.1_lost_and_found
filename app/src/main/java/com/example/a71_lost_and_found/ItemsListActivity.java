@@ -27,7 +27,7 @@ public class ItemsListActivity extends AppCompatActivity {
 
     ListItemsAdapter listItemsAdapter;
 
-    ArrayList advert_id, advert_name, advert_phone, advert_description, advert_date, advert_location, advert_type;
+    ArrayList advert_id, advert_name, advert_phone, advert_description, advert_date, advert_latitude, advert_longitude, advert_type;
     Items itemsDB;
     Button backButton;
 
@@ -47,10 +47,11 @@ public class ItemsListActivity extends AppCompatActivity {
         advert_phone = new ArrayList<>();
         advert_description = new ArrayList<>();
         advert_date = new ArrayList<>();
-        advert_location = new ArrayList<>();
+        advert_latitude = new ArrayList<>();
+        advert_longitude = new ArrayList<>();
         advert_type = new ArrayList<>();
 
-        listItemsAdapter = new ListItemsAdapter(this, advert_id, advert_name, advert_phone, advert_description, advert_date, advert_location, advert_type);
+        listItemsAdapter = new ListItemsAdapter(this, advert_id, advert_name, advert_phone, advert_description, advert_date, advert_latitude, advert_longitude, advert_type);
         itemsDB = new Items(ItemsListActivity.this);
         advertsList = findViewById(R.id.advertsRecyclerView);
 
@@ -86,8 +87,9 @@ public class ItemsListActivity extends AppCompatActivity {
                 long dateTimeStamp = cursor.getLong(4);
                 String date = convertTimestampToDate(dateTimeStamp);
                 advert_date.add(date);
-                advert_location.add(cursor.getString(5));
-                advert_type.add(cursor.getString(6));
+                advert_latitude.add(cursor.getString(5));
+                advert_longitude.add(cursor.getString(6));
+                advert_type.add(cursor.getString(7));
             }
             cursor.close();
         }

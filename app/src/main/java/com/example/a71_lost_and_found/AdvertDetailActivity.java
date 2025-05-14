@@ -15,11 +15,12 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+
 import org.w3c.dom.Text;
 
 public class AdvertDetailActivity extends AppCompatActivity {
 
-    TextView description, date, location, type;
+    TextView description, date, location, type, phone;
     Button deleteButton;
     String id;
 
@@ -39,6 +40,7 @@ public class AdvertDetailActivity extends AppCompatActivity {
         date = findViewById(R.id.date);
         location = findViewById(R.id.location);
         type = findViewById(R.id.type);
+        phone = findViewById(R.id.phone);
         deleteButton = findViewById(R.id.deletebutton);
         deleteButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,13 +53,14 @@ public class AdvertDetailActivity extends AppCompatActivity {
     }
 
     void getAndSetIntentData() {
-        if (getIntent().hasExtra("id") && getIntent().hasExtra("description") && getIntent().hasExtra("date") && getIntent().hasExtra("location") && getIntent().hasExtra("type")) {
+        if (getIntent().hasExtra("id") && getIntent().hasExtra("description") && getIntent().hasExtra("date") && getIntent().hasExtra("phone") && getIntent().hasExtra("location") && getIntent().hasExtra("type")) {
             // Set the data to the TextViews
             id = getIntent().getStringExtra("id");
             description.setText(getIntent().getStringExtra("description"));
             date.setText(getIntent().getStringExtra("date"));
             location.setText(getIntent().getStringExtra("location"));
             type.setText(getIntent().getStringExtra("type"));
+            phone.setText(getIntent().getStringExtra("phone"));
         } else {
             Toast.makeText(this, "No data.", Toast.LENGTH_SHORT).show();
         }

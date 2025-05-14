@@ -17,14 +17,15 @@ import java.util.Locale;
 public class Items extends SQLiteOpenHelper {
     private Context context;
     private static final String DATABASE_NAME = "lostAndFoundItems.db";
-    private static final int DATABASE_VERSION = 3;
+    private static final int DATABASE_VERSION = 4;
     private static final String TABLE_NAME = "items";
     private static final String COLUMN_ID = "_id";
     private static final String COLUMN_NAME = "name";
     private static final String COLUMN_PHONE = "phone";
     private static final String COLUMN_DESCRIPTION = "description";
     private static final String COLUMN_DATE = "date";
-    private static final String COLUMN_LOCATION = "location";
+    private static final String COLUMN_LATITUDE = "latitude";
+    private static final String COLUMN_LONGITUDE = "longitude";
 
     private static final String COLUMN_TYPE = "type";
 
@@ -44,7 +45,8 @@ public class Items extends SQLiteOpenHelper {
                 COLUMN_PHONE + " TEXT, " +
                 COLUMN_DESCRIPTION + " TEXT, " +
                 COLUMN_DATE + " TEXT, " +
-                COLUMN_LOCATION + " TEXT, " +
+                COLUMN_LATITUDE + " TEXT, " +
+                COLUMN_LONGITUDE + " TEXT, " +
                 COLUMN_TYPE + " TEXT);";
         db.execSQL(query);
     }
@@ -55,7 +57,7 @@ public class Items extends SQLiteOpenHelper {
         onCreate(db);
     }
 
-    void addItem(String name, String phone, String description, String date, String location, String type) {
+    void addItem(String name, String phone, String description, String date, String latitude, String longitude, String type) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
@@ -63,7 +65,8 @@ public class Items extends SQLiteOpenHelper {
         cv.put(COLUMN_PHONE, phone);
         cv.put(COLUMN_DESCRIPTION, description);
         cv.put(COLUMN_DATE, date);
-        cv.put(COLUMN_LOCATION, location);
+        cv.put(COLUMN_LATITUDE, latitude);
+        cv.put(COLUMN_LONGITUDE, longitude);
         cv.put(COLUMN_TYPE, type);
 
         // Convert the date string to DD/MM/YYYY format

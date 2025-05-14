@@ -11,43 +11,56 @@
         android:id="@+id/type"
         android:layout_width="59dp"
         android:layout_height="31dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginStart="56dp"
+        android:layout_marginTop="208dp"
         android:text="type"
-        app:layout_constraintEnd_toStartOf="@+id/location"
-        app:layout_constraintHorizontal_bias="0.704"
+        app:layout_constraintEnd_toStartOf="@+id/description"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="284dp"
+        android:layout_width="280dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="208dp"
         android:text="description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.164"
+        app:layout_constraintHorizontal_bias="0.821"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/date"
-        android:layout_width="165dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="368dp"
-        android:text="date"
+        android:id="@+id/phone"
+        android:layout_width="103dp"
+        android:layout_height="25dp"
+        android:layout_marginBottom="456dp"
+        android:text="phone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.219"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="92dp"
+        android:layout_height="31dp"
+        android:text="date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.174"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.404" />
 
     <TextView
         android:id="@+id/location"
         android:layout_width="111dp"
         android:layout_height="34dp"
-        android:layout_marginTop="212dp"
+        android:layout_marginTop="292dp"
         android:text="location"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.436"
+        app:layout_constraintHorizontal_bias="0.183"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 

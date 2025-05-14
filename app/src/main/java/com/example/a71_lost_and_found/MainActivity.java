@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button CreateButton;
 
     Button ShowAllButton;
+    Button ShowMapButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ItemsListActivity.class);
+                startActivity(intent);
+            }
+        });
+        ShowMapButton = findViewById(R.id.ShowMapButton);
+        ShowMapButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, MapsActivity.class);
                 startActivity(intent);
             }
         });
